@@ -62,7 +62,7 @@ export default {
           };
 
           await axios.post(
-            `http://www.sistemadecotizacionwebapi.somee.com/api/rol/`,
+            `https://www.sistemadecotizacionwebapi.somee.com/api/rol/`,
             this.rol,
             config
           );

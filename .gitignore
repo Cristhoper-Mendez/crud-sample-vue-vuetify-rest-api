@@ -6,6 +6,8 @@ node_modules
 # local env files
 .env.local
 .env.*.local
+*.docx
+*.pdf
 
 # Log files
 npm-debug.log*
@@ -16,6 +18,7 @@ pnpm-debug.log*
 # Editor directories and files
 .idea
 .vscode
+.vs
 *.suo
 *.ntvs*
 *.njsproj

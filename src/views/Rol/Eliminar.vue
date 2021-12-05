@@ -56,7 +56,7 @@ export default {
         };
 
         const res = await axios.get(
-          `http://www.sistemadecotizacionwebapi.somee.com/api/rol/${this.id}`,
+          `https://www.sistemadecotizacionwebapi.somee.com/api/rol/${this.id}`,
           config
         );
         this.rol = res.data;
@@ -77,7 +77,7 @@ export default {
         };
 
         await axios.delete(
-          `http://www.sistemadecotizacionwebapi.somee.com/api/rol/${this.id}`,
+          `https://www.sistemadecotizacionwebapi.somee.com/api/rol/${this.id}`,
           config
         );
         this.loading = false;

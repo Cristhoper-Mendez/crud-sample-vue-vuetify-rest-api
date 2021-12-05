@@ -85,7 +85,7 @@ export default {
       };
 
       const res = await axios.get(
-        "http://www.sistemadecotizacionwebapi.somee.com/api/rol",
+        "https://www.sistemadecotizacionwebapi.somee.com/api/rol",
         config
       );
       this.roles = res.data;
@@ -112,7 +112,7 @@ export default {
           };
 
           const res = await axios.post(
-            "http://www.sistemadecotizacionwebapi.somee.com/api/rol/buscar",
+            "https://www.sistemadecotizacionwebapi.somee.com/api/rol/buscar",
             obj,
             config
           );
