@@ -7,7 +7,7 @@
       </v-alert>
     </div>
     <v-row>
-      <v-col sm="4">
+      <v-col cols="12" xs="12" lg="4">
         <v-text-field
           v-model="rol.nombre"
           label="Nombre"
@@ -20,7 +20,7 @@
           v-if="rol.nombre !== 'Cargando...'"
         ></v-text-field>
       </v-col>
-      <v-col sm="12">
+      <v-col cols="12" xs="12" lg="4">
         <router-link :to="{ name: 'Rol' }">
           <v-btn class="mr-1" depressed color="error"> Cancelar </v-btn>
         </router-link>

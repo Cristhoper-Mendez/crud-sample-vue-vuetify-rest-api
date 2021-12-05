@@ -2,19 +2,19 @@
   <v-container>
     <h2>Buscar</h2>
     <v-row>
-      <v-col sm="4">
+      <v-col cols="12" xs="12" md="12" lg="4">
         <v-text-field v-model="nombre" label="Nombre"></v-text-field>
       </v-col>
-      <v-col sm="4">
+      <v-col cols="12" xs="12" md="12" lg="4">
         <v-btn depressed color="green" @click="buscarRoles"> Buscar </v-btn>
         <router-link :to="{ name: 'AgregarRol' }">
           <v-btn depressed color="cyan" class="ml-3"> Agregar </v-btn>
         </router-link>
       </v-col>
 
-      <v-col sm="12">
+      <v-col cols="12" xs="12" md="12" lg="12">
         <v-simple-table>
-          <template v-slot:default>
+          <template>
             <thead>
               <tr>
                 <th class="text-left">Nombre</th>
@@ -25,7 +25,7 @@
             <tbody v-if="!loading">
               <tr v-for="item in roles" :key="item.idRol">
                 <td>{{ item.nombre }}</td>
-                <td>
+                <td class="d-flex mt-1">
                   <router-link
                     :to="{ name: 'EliminarRol', params: { id: item.idRol } }"
                   >
