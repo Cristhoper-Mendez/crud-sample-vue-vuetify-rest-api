@@ -27,20 +27,15 @@
           <span class="white--text">Rol</span>
         </router-link>
         <router-link class="ml-2" v-if="!isActive" :to="{ name: 'Login' }">
-        |
+          |
           <span class="white--text">Login</span>
         </router-link>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn icon @click="logout">
+        <v-icon>mdi-logout</v-icon>
       </v-btn>
     </v-app-bar>
 

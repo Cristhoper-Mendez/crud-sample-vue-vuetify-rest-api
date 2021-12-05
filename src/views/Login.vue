@@ -1,12 +1,14 @@
 <template>
   <v-container>
     <h2>Login</h2>
-    <v-row justify="">
+    <v-row>
       <v-col>
-        <div v-if="mensaje != ''">
-          <p>{{ mensaje }}</p>
+        <div v-if="mensaje !== ''">
+          <v-alert dense type="error">
+            {{ mensaje }}
+          </v-alert>
         </div>
-        <v-form>
+        <v-form v-if="!loading">
           <v-text-field v-model="login" label="Login" required></v-text-field>
 
           <v-text-field
@@ -17,6 +19,15 @@
 
           <v-btn color="success" class="mr-4" @click="loginUser"> Login </v-btn>
         </v-form>
+
+        <div class="d-flex justify-center mt-4" v-if="loading">
+          <v-progress-circular
+            indeterminate
+            color="primary"
+            :size="70"
+            :width="7"
+          ></v-progress-circular>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -32,10 +43,13 @@ export default {
       login: "",
       password: "",
       mensaje: "",
+      loading: false,
     };
   },
   methods: {
     async loginUser() {
+      this.loading = true;
+
       const usuario = {
         login: this.login,
         password: this.password,
@@ -54,7 +68,9 @@ export default {
 
         this.saveUser(obj);
         this.$router.push({ name: "Rol" });
+        this.loading = false;
       } catch (error) {
+        this.loading = false;
         this.mensaje = "Usuario o contraseña incorrectos.";
 
         setTimeout(() => {
